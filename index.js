@@ -1,3 +1,7 @@
+const express = require('express');
+const app = express();
+app.use(express.json());
+
 app.post('/voice', (req, res) => {
   console.log('📞 SignalWire a POST sur /voice');
 
@@ -10,5 +14,9 @@ app.post('/voice', (req, res) => {
       }
     ]
   });
+});
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("✅ Serveur lancé, clé API chargée.");
 });
 
