@@ -12,5 +12,6 @@ app.post('/voice', (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("✅ Serveur test en ligne.");
+  console.log("Clé API chargée : ", process.env.OPENAI_API_KEY);
+
 });
