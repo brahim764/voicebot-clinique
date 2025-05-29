@@ -1,13 +1,7 @@
-const express = require('express');
-const app = express();
-
-app.use(express.json());
-
 app.post('/voice', (req, res) => {
-  console.log('✅ Appel reçu !');
+  console.log('📞 SignalWire a POST sur /voice');
 
-  res.setHeader('Content-Type', 'application/json');
-  res.status(200).json({
+  res.json({
     commands: [
       {
         say: {
@@ -18,7 +12,3 @@ app.post('/voice', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 Serveur lancé sur le port ${PORT}`);
-});
