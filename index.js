@@ -7,8 +7,9 @@ app.post('/voice', (req, res) => {
   res.json({
     commands: [
       {
-        say: {
-          text: "Bonjour, ceci est la réponse correcte depuis Render."
+        "say": {
+          "text": "Bonjour, ceci est la réponse depuis Render.",
+          "voice": "fr-CA-Wavenet-A"
         }
       }
     ]
