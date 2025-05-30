@@ -4,12 +4,12 @@ app.use(express.json());
 
 app.post('/voice', (req, res) => {
   console.log('📞 Appel reçu de SignalWire');
+  res.setHeader("Content-Type", "application/json");
   res.json({
     commands: [
       {
         say: {
-          text: "Bonjour, ceci est la réponse depuis Render.",
-          voice: "fr-CA-Wavenet-A"
+          text: "Bonjour, ceci est une réponse test depuis Render."
         }
       }
     ]
@@ -19,4 +19,3 @@ app.post('/voice', (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
   console.log("✅ Serveur en ligne sur port 3000 ou Render");
 });
-
