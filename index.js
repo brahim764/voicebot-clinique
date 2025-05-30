@@ -3,17 +3,17 @@ const app = express();
 app.use(express.json());
 
 app.post('/voice', (req, res) => {
-  console.log('📞 Appel reçu de SignalWire');
+  console.log("📞 SignalWire a bien appelé /voice");
   res.setHeader("Content-Type", "application/json");
-  res.json({
+  res.status(200).send(JSON.stringify({
     commands: [
       {
         say: {
-          text: "Bonjour, ceci est une réponse test depuis Render."
+          text: "Test simple. SignalWire doit lire ce message."
         }
       }
     ]
-  });
+  }));
 });
 
 app.listen(process.env.PORT || 3000, () => {
