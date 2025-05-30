@@ -7,9 +7,9 @@ app.post('/voice', (req, res) => {
   res.json({
     commands: [
       {
-        "say": {
-          "text": "Bonjour, ceci est la réponse depuis Render.",
-          "voice": "fr-CA-Wavenet-A"
+        say: {
+          text: "Bonjour, ceci est la réponse depuis Render.",
+          voice: "fr-CA-Wavenet-A"
         }
       }
     ]
@@ -19,3 +19,4 @@ app.post('/voice', (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
   console.log("✅ Serveur en ligne sur port 3000 ou Render");
 });
+
